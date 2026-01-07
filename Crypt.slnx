@@ -1,0 +1,8 @@
+<Solution>
+  <Configurations>
+    <Platform Name="ARM64" />
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="Crypt/Crypt.vcxproj" Id="94c82ca0-3d44-4158-ab93-9ae8afb045d7" />
+</Solution>
