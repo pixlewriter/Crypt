@@ -5,6 +5,7 @@ This is a project that will be used to challenge my computer science skill. It i
 ## Project State
 - **Number of Encryptions:** 2
 - **User Interface:** Text Based
+- **Type of Memeory:** None
 - **Languages Used:** C++
 
 ## Encryptions
@@ -39,7 +40,12 @@ Known Bugs: None
 ***
 - **Input**
   - *Limits:* Numbers should not be inputted as this makes decryption impossible, but this will not break encryption
-  - *Parameters:*
+  - *Parameters:*\
+    `Input Message`: Text\
+    `Encoded Numbers`: Text\
+    `Matrix Rows`: Integer\
+    `Matrix Columns`: Integer\
+    `Key Matrix`: Integer
 
 - **Output**
   - *Characters Encoded:*
