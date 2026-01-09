@@ -43,7 +43,7 @@ Known Bugs: None
   - *Parameters:*\
     `Input Message`: Text\
     `Encoded Numbers`: Text\
-    `Matrix Size`: Integer\
+    `Matrix Size`: Integer
     `Key Matrix`: Integer
 
 - **Output**
