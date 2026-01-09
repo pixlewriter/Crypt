@@ -62,12 +62,29 @@ jobs:
             core.setOutput('number', pr.number);
             core.setOutput('body', pr.body);
 
-      - name: Append PR description to CHANGELOG.md
+      - name: Extract Changelog Entry and append to CHANGELOG.md
         run: |
-          echo "" >> CHANGELOG.md
-          echo "## $(date +'%Y-%m-%d')" >> CHANGELOG.md
-          echo "${{ steps.pr.outputs.body }}" >> CHANGELOG.md
-
+          PR_BODY="${{ steps.pr.outputs.body }}"
+      
+          echo "Extracting Changelog Entry..."
+      
+          CHANGELOG_ENTRY=$(echo "$PR_BODY" | awk '
+            BEGIN {found=0}
+            /^## Changelog Entry/ {found=1; next}
+            /^## / && found {exit}
+            found {print}
+          ')
+      
+          if [ -z "$CHANGELOG_ENTRY" ]; then
+            echo "❌ No Changelog Entry found."
+            exit 1
+          fi
+      
+          {
+            echo ""
+            echo "## $(date +'%Y-%m-%d')"
+            echo "$CHANGELOG_ENTRY"
+          } >> CHANGELOG.md
       - name: Commit changelog
         run: |
           git config user.name "github-actions"
