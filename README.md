@@ -10,7 +10,6 @@ This is a project that will be used to challenge my computer science skill. It i
 
 ## Encryptions
 ### Ceaser Cypher
-***
 - **Input**
   - *Limits:* None
   - *Parameters:*\
@@ -35,15 +34,14 @@ This is a project that will be used to challenge my computer science skill. It i
 
 > [!WARNING]
 Known Bugs: None
-
-### Matrix Encryption
 ***
+### Matrix Encryption
 - **Input**
   - *Limits:* Numbers should not be inputted as this makes decryption impossible, but this will not break encryption
   - *Parameters:*\
     `Input Message`: Text\
     `Encoded Numbers`: Text\
-    `Matrix Size`: Integer
+    `Matrix Size`: Integer\
     `Key Matrix`: Integer
 
 - **Output**
