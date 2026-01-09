@@ -43,8 +43,7 @@ Known Bugs: None
   - *Parameters:*\
     `Input Message`: Text\
     `Encoded Numbers`: Text\
-    `Matrix Rows`: Integer\
-    `Matrix Columns`: Integer\
+    `Matrix Size`: Integer
     `Key Matrix`: Integer
 
 - **Output**
@@ -73,5 +72,4 @@ Known Bugs: None
 For now the answer to ```Would you like to encode numbers as well? (if no, numbers will remain numbers, and will make it impossible to decrypt.``` does not matter.
 
 > [!WARNING]
-> Known Bugs:
-> - [ ] Rectangular Matrices for the key matrix crash the program. 
+> Known Bugs: None

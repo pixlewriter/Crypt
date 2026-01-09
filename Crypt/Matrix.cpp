@@ -17,20 +17,16 @@ void Matrix::setSettings() {
 		}
 	}
 
-	cout << "How many rows does this matrix have? ";
-	int rows;
-	cin >> rows;
-	settings["Matrix Rows"] = to_string(rows);
+	cout << "What size does this matrix have? ";
+	int size;
+	cin >> size;
+	settings["Matrix Size"] = to_string(size);
 
-	cout << "How many columns does this matrix have? ";
-	int columns;
-	cin >> columns;
-	settings["Matrix Columns"] = to_string(columns);
 
 	settings["Key"] = "";
 
-	cout << "Type in " << rows * columns << " numbers. (Hit Enter after each number). " << endl;
-	for (int i = 0; i < rows * columns; i++) {
+	cout << "Type in " << size * size << " numbers. (Hit Enter after each number). " << endl;
+	for (int i = 0; i < size * size; i++) {
 		int num;
 		cin >> num;
 		settings["Key"] += to_string(num);
@@ -39,10 +35,12 @@ void Matrix::setSettings() {
 }
 
 string Matrix::encrypt() {
-	Eigen::MatrixXd keyMatrix(stoi(settings["Matrix Rows"]), stoi(settings["Matrix Columns"]));
+	int matrixSize = stoi(settings["Matrix Size"]);
 
-	for (int i = 0; i < stoi(settings["Matrix Rows"]); i++) {
-		for (int j = 0; j < stoi(settings["Matrix Columns"]); j++) {
+	Eigen::MatrixXd keyMatrix(matrixSize, matrixSize);
+
+	for (int i = 0; i < matrixSize; i++) {
+		for (int j = 0; j < matrixSize; j++) {
 			keyMatrix(i, j) = settings["Key"][i + j] - '0';
 		}
 	}
@@ -73,7 +71,7 @@ string Matrix::encrypt() {
 		}
 	}
 
-	int padding = (size % stoi(settings["Matrix Rows"]));
+	int padding = (size % matrixSize);
 
 	for (int i = 0; i < padding; i++) {
 		message += "27";
@@ -81,7 +79,7 @@ string Matrix::encrypt() {
 	}
 	
 	vector<Eigen::MatrixXd> matrices;
-	int rowAmt = stoi(settings["Matrix Rows"]);
+	int rowAmt = matrixSize;
 	Eigen::MatrixXd currentMatrix = *(new Eigen::MatrixXd(rowAmt, 1));
 
 	int charIndex = 0;
