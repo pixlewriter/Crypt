@@ -57,8 +57,7 @@ Known Bugs: None
 - **Example**
   <pre><code>What is the input message? <b>H3ll0 W0r!d</b>
   Would you like to encode numbers as well? (if no, numbers will remain numbers, and will make it impossible to decrypt. <b>no</b>
-  How many rows does this matrix have? <b>2</b>
-  How many columns does this matrix have? <b>2</b>
+  What size does this matrix have? <b>2</b>
   Type in 4 numbers. (Hit Enter after each number).
   <b>1</b>
   <b>2</b>
